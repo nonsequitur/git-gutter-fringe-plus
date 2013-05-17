@@ -129,6 +129,45 @@
       git-gutter:clear-function 'git-gutter-fr:clear
       git-gutter:window-config-change-function nil)
 
+(defun git-gutter-fr:minimal ()
+  (fringe-helper-define 'git-gutter-fr:added nil
+    "........"
+    "..XX...."
+    "..XX...."
+    "XXXXXX.."
+    "XXXXXX.."
+    "..XX...."
+    "..XX....")
+
+
+  (fringe-helper-define 'git-gutter-fr:deleted nil
+    "........"
+    "........"
+    "........"
+    "XXXXXXX."
+    "XXXXXXX."
+    "XXXXXXX."
+    "........"
+    "........")
+
+  (fringe-helper-define 'git-gutter-fr:modified nil
+    "........"
+    "........"
+    "..XXXX.."
+    "..XXXX.."
+    "..XXXX.."
+    "..XXXX.."
+    "..XXXX.."
+    "..XXXX.."
+    "..XXXX.."
+    "..XXXX.."
+    "..XXXX.."
+    "..XXXX..")
+
+  (set-face-attribute 'git-gutter-fr:added    nil :foreground "grey50")
+  (set-face-attribute 'git-gutter-fr:deleted  nil :foreground "grey50")
+  (set-face-attribute 'git-gutter-fr:modified nil :foreground "grey50"))
+
 (provide 'git-gutter-fringe)
 
 ;;; git-gutter-fringe.el ends here
