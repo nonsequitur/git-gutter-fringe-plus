@@ -1,55 +1,43 @@
-# git-gutter-fringe.el
+## git-gutter-fringe.el
 
-## Introduction
-`git-gutter-fringe.el` is fringe version of of [git-gutter.el](https://github.com/syohex/emacs-git-gutter).
+git-gutter-fringe is a display mode for
+[git-gutter.el](https://github.com/nonsequitur/git-gutter-plus).
+It uses the buffer fringe instead of the buffer margin.
 
+|                          | git-gutter.el | git-gutter-fringe.el |
+|:-------------------------|:-------------:|:--------------------:|
+| Works in tty frame       | +             | -                    |
+| Works with linum-mode    | -             | +                    |
+| Gutter on the right side | -             | +                    |
 
-`git-gutter.el` does not work with `linum-mode` but `git-gutter-fringe.el` can work with `linum-mode`.
-In contrast, `git-gutter-fringe.el` does not work in tty frame(`emacs -nw`), but `git-gutter.el`
-can work in tty frame.
-
-
-## Screenshot
-
-![git-gutter-fringe.el](image/git-gutter-fringe.png)
-
-
-## Requirements
-
-* Emacs 23 or higher
-* [git-gutter.el](https://github.com/syohex/emacs-git-gutter)
-* [fringe-helper](http://www.emacswiki.org/emacs/FringeHelper) for using `git-gutter-fringe`
-
+![git-gutter-fringe.el](images/git-gutter-fringe.png)
 
 ## Installation
 
-You can install `git-gutter.el` from [MELPA](https://github.com/milkypostman/melpa.git) with package.el
-(`M-x package-install git-gutter-fringe`).
+* With package.el:
 
-And you can also install it with [el-get](https://github.com/dimitri/el-get).
+  Add  [MELPA](https://github.com/milkypostman/melpa.git) as a package source.
+  Run `M-x package-install git-gutter-fringe`
+  (And make sure you've got the latest version of
+  [fringe-helper](http://www.emacswiki.org/emacs/FringeHelper))
 
+* Add this to your .emacs file:
 
-## Basic Usage
+        (require git-gutter-fringe)
 
-Interfaces are same as `git-gutter.el`.
+## Minimal skin
 
-* git-gutter
-* git-gutter:clear
-* git-gutter:toggle
+![git-gutter-fringe-minimal](images/git-gutter-fringe-minimal.png)
 
+Features smaller, greyscale diff symbols. Activate it with
 
-## Sample Configuration
-
-```elisp
-;; You need to install fringe-helper.el
-(require 'git-gutter-fringe)
-```
+    (git-gutter-fr:minimal)
 
 ## Customize
 
 ### Look and feel
 
-![git-gutter-fringe-customize](image/git-gutter-fringe-customize.png)
+![git-gutter-fringe-customize](images/git-gutter-fringe-customize.png)
 
 You can change faces like following.
 
@@ -61,7 +49,7 @@ You can change faces like following.
 
 ### Change signs in fringe
 
-![git-gutter-fringe-change-signs](image/git-gutter-fringe-change-signs.png)
+![git-gutter-fringe-change-signs](images/git-gutter-fringe-change-signs.png)
 
 ```elisp
 ;; Please adjust fringe width if your own sign is too big.
@@ -101,7 +89,7 @@ You can change faces like following.
 
 ### Position of fringe
 
-![git-gutter-fringe-right](image/git-gutter-fringe-right.png)
+![git-gutter-fringe-right](images/git-gutter-fringe-right.png)
 
 You can change position of fringe, left or right. Default is left.
 
