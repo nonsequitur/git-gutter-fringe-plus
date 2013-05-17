@@ -1,8 +1,8 @@
 ;;; git-gutter-fringe.el --- Fringe version of git-gutter.el
 
-;; Copyright (C) 2013 by Syohei YOSHIDA
+;; Copyright (C) 2013 by Syohei YOSHIDA and contributors
 
-;; Author: Syohei YOSHIDA <syohex@gmail.com>
+;; Author: Syohei YOSHIDA <syohex@gmail.com> and contributors
 ;; URL: https://github.com/syohex/emacs-git-gutter-fringe
 ;; Version: 0.12
 ;; Package-Requires: ((git-gutter+ "0.01") (fringe-helper "20130519.1641"))
