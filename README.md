@@ -25,6 +25,12 @@ It uses the buffer fringe instead of the buffer margin.
 
         (require git-gutter-fringe+)
 
+ The fringe display mode is automatically activated.
+
+## Disabling/Enabling
+
+Run `M-x git-gutter+-toggle-fringe` to disable/enable the fringe display mode.
+
 ## Minimal skin
 
 ![git-gutter-fringe-minimal](images/git-gutter-fringe-minimal.png)

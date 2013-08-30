@@ -125,10 +125,6 @@
   (mapc 'git-gutter-fr+-clear-overlay git-gutter-fr+-bitmap-references)
   (setq git-gutter-fr+-bitmap-references nil))
 
-(setq git-gutter+-view-diff-function 'git-gutter-fr+-view-diff-infos
-      git-gutter+-clear-function 'git-gutter-fr+-clear
-      git-gutter+-window-config-change-function nil)
-
 (defun git-gutter-fr+-minimal ()
   (fringe-helper-define 'git-gutter-fr+-added nil
     "........"
@@ -167,6 +163,32 @@
   (set-face-attribute 'git-gutter-fr+-added    nil :foreground "grey50")
   (set-face-attribute 'git-gutter-fr+-deleted  nil :foreground "grey50")
   (set-face-attribute 'git-gutter-fr+-modified nil :foreground "grey50"))
+
+(defun git-gutter+-enable-fringe-display-mode ()
+  (setq git-gutter+-view-diff-function 'git-gutter-fr+-view-diff-infos
+        git-gutter+-clear-function     'git-gutter-fr+-clear
+        git-gutter+-window-config-change-function nil))
+
+(defun git-gutter+-toggle-fringe ()
+  (interactive)
+  (let ((old-clear-fn git-gutter+-clear-function))
+    (if (eq old-clear-fn 'git-gutter-fr+-clear)
+        (git-gutter+-enable-default-display-mode)
+      (git-gutter+-enable-fringe-display-mode))
+
+    (git-gutter+-in-all-buffers
+     (when git-gutter+-mode
+       (git-gutter+-set-window-margin 0)
+       (remove-hook 'window-configuration-change-hook 'git-gutter+-show-gutter t)
+
+       (funcall old-clear-fn)
+       (funcall git-gutter+-view-diff-function git-gutter+-diffinfos)
+
+       (if git-gutter+-window-config-change-function
+           (add-hook 'window-configuration-change-hook
+                     git-gutter+-window-config-change-function nil t))))))
+
+(git-gutter+-enable-fringe-display-mode)
 
 (provide 'git-gutter-fringe+)
 
