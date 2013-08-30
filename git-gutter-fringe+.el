@@ -4,8 +4,8 @@
 
 ;; Author: Syohei YOSHIDA <syohex@gmail.com> and contributors
 ;; URL: https://github.com/nonsequitur/git-gutter-fringe-plus
-;; Version: 0.01
-;; Package-Requires: ((git-gutter+ "0.01") (fringe-helper "20130519.1641"))
+;; Version: 0.0.2
+;; Package-Requires: ((git-gutter+ "0.1") (fringe-helper "20130519.1641"))
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
