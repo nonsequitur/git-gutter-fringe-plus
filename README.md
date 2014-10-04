@@ -23,7 +23,7 @@ It uses the buffer fringe instead of the buffer margin.
 
 * Add this to your .emacs file:
 
-        (require git-gutter-fringe+)
+        (require 'git-gutter-fringe+)
 
  The fringe display mode is automatically activated.
 
